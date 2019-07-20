@@ -1,11 +1,18 @@
 import React from "react";
+import { withRouter } from "react-router-dom";
 import { ButtonFloating } from "../ButtonFloating/style";
 import ButtonIcon from "../ButtonIcon";
 import FlexWrapper from "../FlexWrapper";
 import { BottomNavbarContainer, BottomNavbarPart } from "./style";
 import { color } from "../../constants";
 
-const BottomNavbar = ({ defaultPath, leftNav, rightNav, ...otherProps }) => {
+const BottomNavbar = ({
+  defaultPath,
+  leftNav,
+  rightNav,
+  history,
+  ...otherProps
+}) => {
   const [navItem, setNavItem] = React.useState(defaultPath);
 
   return (
@@ -20,7 +27,10 @@ const BottomNavbar = ({ defaultPath, leftNav, rightNav, ...otherProps }) => {
                 isActive={navItem === pathname && true}
                 icon={icon}
                 withText={text}
-                onClick={() => setNavItem(pathname)}
+                onClick={() => {
+                  setNavItem(pathname);
+                  history.push(pathname);
+                }}
                 {...otherItemProps}
               />
             </BottomNavbarPart>
@@ -42,7 +52,10 @@ const BottomNavbar = ({ defaultPath, leftNav, rightNav, ...otherProps }) => {
                 isActive={navItem === pathname && true}
                 icon={icon}
                 withText={text}
-                onClick={() => setNavItem(pathname)}
+                onClick={() => {
+                  setNavItem(pathname);
+                  history.push(pathname);
+                }}
                 {...otherItemProps}
               />
             </BottomNavbarPart>
@@ -53,4 +66,4 @@ const BottomNavbar = ({ defaultPath, leftNav, rightNav, ...otherProps }) => {
   );
 };
 
-export default BottomNavbar;
+export default withRouter(BottomNavbar);
