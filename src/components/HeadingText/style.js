@@ -1,31 +1,47 @@
 import styled from "styled-components";
 
-const HeadingTextH1 = styled.h1`
+import { color } from "../../constants";
+
+const HeadingBase = styled.p`
+  font-family: "Rubik", sans-serif;
+  font-weight: bold;
+  color: ${props => (props.color ? props.color : color.dark)};
+`;
+
+const HeadingTextH1 = styled(HeadingBase)`
   margin: 8px 0 0 0;
 
-  font-family: "Rubik", sans-serif;
-  font-weight: bold;
+  font-size: 2em;
 `;
 
-const HeadingTextH2 = styled.h2`
+const HeadingTextH2 = styled(HeadingBase)`
   margin: 6px 0 0 0;
 
-  font-family: "Rubik", sans-serif;
-  font-weight: bold;
+  font-size: 1.5em;
 `;
 
-const HeadingTextH3 = styled.h3`
+const HeadingTextH3 = styled(HeadingBase)`
   margin: 4px 0 0 0;
 
-  font-family: "Rubik", sans-serif;
-  font-weight: bold;
+  font-size: 1.17rem;
 `;
 
-const HeadingTextH4 = styled.h4`
+const HeadingTextH4 = styled(HeadingBase)`
   margin: 3px 0 0 0;
 
-  font-family: "Rubik", sans-serif;
-  font-weight: bold;
+  font-size: 1.12rem;
 `;
 
-export { HeadingTextH1, HeadingTextH2, HeadingTextH3, HeadingTextH4 };
+const HeadingTextH5 = styled(HeadingBase)`
+  margin: 2px 0 0 0;
+
+  font-size: 0.83rem;
+`;
+
+export {
+  HeadingTextH1,
+  HeadingTextH2,
+  HeadingTextH3,
+  HeadingTextH4,
+  HeadingTextH5
+};

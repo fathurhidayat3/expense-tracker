@@ -3,7 +3,8 @@ import {
   HeadingTextH1,
   HeadingTextH2,
   HeadingTextH3,
-  HeadingTextH4
+  HeadingTextH4,
+  HeadingTextH5
 } from "./style";
 
 const checkType = ({ type, ...otherProps }) => {
@@ -16,6 +17,8 @@ const checkType = ({ type, ...otherProps }) => {
       return <HeadingTextH3 {...otherProps} />;
     case "h4":
       return <HeadingTextH4 {...otherProps} />;
+    case "h5":
+      return <HeadingTextH5 {...otherProps} />;
     default:
       return <HeadingTextH1 {...otherProps} />;
   }
