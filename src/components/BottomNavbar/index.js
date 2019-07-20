@@ -5,16 +5,24 @@ import FlexWrapper from "../FlexWrapper";
 import { BottomNavbarContainer, BottomNavbarPart } from "./style";
 import { color } from "../../constants";
 
-const BottomNavbar = ({ leftNav, rightNav, ...otherProps }) => {
+const BottomNavbar = ({ defaultPath, leftNav, rightNav, ...otherProps }) => {
+  const [navItem, setNavItem] = React.useState(defaultPath);
+
   return (
     <BottomNavbarContainer>
       <FlexWrapper noPadding>
         {leftNav.map((leftNavItem, index) => {
-          const { icon, text, ...otherItemProps } = leftNavItem;
+          const { icon, text, pathname, ...otherItemProps } = leftNavItem;
 
           return (
             <BottomNavbarPart key={index}>
-              <ButtonIcon icon={icon} withText={text} {...otherItemProps} />
+              <ButtonIcon
+                isActive={navItem === pathname && true}
+                icon={icon}
+                withText={text}
+                onClick={() => setNavItem(pathname)}
+                {...otherItemProps}
+              />
             </BottomNavbarPart>
           );
         })}
@@ -26,11 +34,17 @@ const BottomNavbar = ({ leftNav, rightNav, ...otherProps }) => {
 
       <FlexWrapper noPadding justifyContent="flex-end">
         {rightNav.map((rightNavItem, index) => {
-          const { icon, text, ...otherItemProps } = rightNavItem;
+          const { icon, text, pathname, ...otherItemProps } = rightNavItem;
 
           return (
             <BottomNavbarPart key={index}>
-              <ButtonIcon icon={icon} withText={text} {...otherItemProps} />
+              <ButtonIcon
+                isActive={navItem === pathname && true}
+                icon={icon}
+                withText={text}
+                onClick={() => setNavItem(pathname)}
+                {...otherItemProps}
+              />
             </BottomNavbarPart>
           );
         })}
