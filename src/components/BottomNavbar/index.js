@@ -10,10 +10,11 @@ const BottomNavbar = ({
   defaultPath,
   leftNav,
   rightNav,
+  location: { pathname },
   history,
   ...otherProps
 }) => {
-  const [navItem, setNavItem] = React.useState(defaultPath);
+  const [navItem, setNavItem] = React.useState(pathname);
 
   return (
     <BottomNavbarContainer>

@@ -1,7 +1,7 @@
 // @flow
 
 import React from "react";
-import { BrowserRouter as Router, Redirect, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import Stat from "./pages/Stat";
 import Base from "./components/Base";
 import BottomNavbar from "./components/BottomNavbar";
@@ -24,38 +24,35 @@ function App() {
           </div>
         </TopNavbar>
 
-        <Route path="/">
-          <Redirect to="/daily" />
-        </Route>
-        <Route path="/daily" component={() => "daily"} />
+        <Route exact path="/" component={() => "daily"} />
         <Route path="/stat" component={() => <Stat />} />
         <Route path="/budget" component={() => "budget"} />
         <Route path="/profile" component={() => "profile"} />
 
         <BottomNavbar
-          defaultPath={"daily"}
+          defaultPath={"/"}
           leftNav={[
             {
               icon: { name: "Calendar", size: 15, color: color.grayDarker2 },
               text: "Daily",
-              pathname: "daily"
+              pathname: "/"
             },
             {
               icon: { name: "BarChart2", size: 15, color: color.grayDarker2 },
               text: "Stat",
-              pathname: "stat"
+              pathname: "/stat"
             }
           ]}
           rightNav={[
             {
               icon: { name: "Book", size: 15, color: color.grayDarker2 },
               text: "Budget",
-              pathname: "budget"
+              pathname: "/budget"
             },
             {
               icon: { name: "User", size: 15, color: color.grayDarker2 },
               text: "Profile",
-              pathname: "profile"
+              pathname: "/profile"
             }
           ]}
         />
