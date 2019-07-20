@@ -1,8 +1,6 @@
 import styled from "styled-components";
 
-import { color, layout } from "../../constants";
-
-const { spacing } = layout;
+import { color } from "../../constants";
 
 const Base = styled.div`
   flex: 1;
