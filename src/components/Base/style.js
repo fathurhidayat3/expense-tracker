@@ -6,8 +6,9 @@ const { spacing } = layout;
 
 const Base = styled.div`
   flex: 1;
-
-  padding: ${spacing.lg};
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
   height: 100%;
   width: 360px;
