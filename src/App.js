@@ -1,5 +1,6 @@
+// @flow
+
 import React from "react";
-import { Search } from "react-feather";
 import Base from "./components/Base";
 import BottomNavbar from "./components/BottomNavbar";
 import ButtonIcon from "./components/ButtonIcon";
@@ -21,9 +22,7 @@ function App() {
         <div style={{ display: "flex", justifyContent: "space-between" }}>
           <HeadingText type="h3">Stat</HeadingText>
 
-          <ButtonIcon>
-            <Search size={15} />
-          </ButtonIcon>
+          <ButtonIcon icon={{ name: "Search", size: 15 }} />
         </div>
       </TopNavbar>
 
@@ -78,22 +77,26 @@ function App() {
       <BottomNavbar
         leftNav={[
           {
-            icon: "Calendar",
-            text: "Daily"
+            icon: { name: "Calendar", size: 15 },
+            text: "Daily",
+            onClick: () => console.log("daily")
           },
           {
-            icon: "BarChart2",
-            text: "Stat"
+            icon: { name: "BarChart2", size: 15 },
+            text: "Stat",
+            onClick: () => console.log("stat")
           }
         ]}
         rightNav={[
           {
-            icon: "Book",
-            text: "Budget"
+            icon: { name: "Book", size: 15 },
+            text: "Budget",
+            onClick: () => console.log("budget")
           },
           {
-            icon: "User",
-            text: "Profile"
+            icon: { name: "User", size: 15 },
+            text: "Profile",
+            onClick: () => console.log("profile")
           }
         ]}
       />
