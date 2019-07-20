@@ -6,25 +6,30 @@ import * as Icon from "react-feather";
 import { ButtonIconStyled } from "./style";
 import HelperText from "../HelperText";
 
+import { color } from "../../constants";
+
 type IconProp = {
   name: string,
-  size: number
+  size: number,
+  color: string
 };
 
 type Props = {
-  children?: React.Node,
   icon?: IconProp,
   withText?: string,
-  color?: String,
+  isActive?: Boolean,
   otherProps?: any
 };
 
-const ButtonIcon = ({ children, icon, withText, ...otherProps }: Props) => {
+const ButtonIcon = ({ icon, withText, isActive, ...otherProps }: Props) => {
   const TempIcon = Icon[icon && icon.name];
 
   return (
-    <ButtonIconStyled withText={withText} {...otherProps}>
-      <TempIcon size={15} />
+    <ButtonIconStyled isActive={isActive} withText={withText} {...otherProps}>
+      <TempIcon
+        size={icon && icon.size}
+        color={icon && icon.color && (isActive && color.primary)}
+      />
       <HelperText style={{ marginTop: 8 }}>{withText}</HelperText>
     </ButtonIconStyled>
   );
