@@ -5,12 +5,14 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import Daily from "./pages/Daily";
 import Stat from "./pages/Stat";
 import Base from "./components/Base";
+import DateScroller from "./components/DateScroller";
+
 import BottomNavbar from "./components/BottomNavbar";
 import ButtonIcon from "./components/ButtonIcon";
 import HeadingText from "./components/HeadingText";
 import TopNavbar from "./components/TopNavbar/style";
-import { color } from "./constants";
 import HelperText from "./components/HelperText";
+import { color } from "./constants";
 
 function App() {
   return (
@@ -25,14 +27,8 @@ function App() {
             />
           </div>
 
-          <div
-            style={{
-              display: "flex",
-              margin: "16px -4px 0 -4px",
-              overflowX: "scroll"
-            }}
-          >
-            {[
+          <DateScroller
+            data={[
               { num: 1, day: "Sun", isActive: false },
               { num: 2, day: "Mon", isActive: true },
               { num: 3, day: "Tue", isActive: false },
@@ -44,39 +40,13 @@ function App() {
               { num: 9, day: "Mon", isActive: false },
               { num: 10, day: "Tue", isActive: false },
               { num: 11, day: "Wed", isActive: false }
-            ].map((item, index) => {
-              return (
-                <div
-                  style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "center"
-                  }}
-                  key={index}
-                >
-                  <HelperText>{item.day}</HelperText>
-                  <div
-                    style={{
-                      display: "inline-block",
-                      margin: "6px 6px 0 6px",
-                      minHeight: 25,
-                      minWidth: 25,
-                      borderRadius: 25,
-                      background: item.isActive
-                        ? color.primary
-                        : color.grayDarker,
-                      fontSize: ".75em",
-                      color: item.isActive ? color.light : color.dark,
-                      lineHeight: "2em",
-                      textAlign: "center"
-                    }}
-                  >
-                    {item.num}
-                  </div>
-                </div>
-              );
-            })}
-          </div>
+            ]}
+            buttonStyle={{
+              activeBackground: "red",
+              activeColor: "yellow"
+            }}
+            onButtonClick={data => console.log(data)}
+          />
         </TopNavbar>
 
         <Route exact path="/" component={() => <Daily />} />
