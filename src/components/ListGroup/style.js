@@ -1,19 +1,21 @@
 import styled from "styled-components";
+import { layout } from "../../constants";
+
+const { spacing } = layout;
 
 const ListGroup = styled.ul`
+  flex: 1;
   list-style: none;
 
-  margin: 0 8px;
-  padding: 0;
-
-  background: red;
+  margin: 0;
+  padding: ${spacing.lg} ${spacing.md};
 `;
 
 const ListGroupItem = styled.li`
-  margin: 0;
-  padding: 0;
+  display: flex;
 
-  background: blue;
+  margin: 0;
+  padding: ${spacing.md} 0 ${spacing.md} ${spacing.sm};
 `;
 
 export { ListGroup, ListGroupItem };
