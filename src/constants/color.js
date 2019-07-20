@@ -5,5 +5,6 @@ export default {
   light: "#ffffff",
   gray: "#fbfbfb",
   grayDarker: "#efefef",
-  grayDarker2: "#a7a9aa"
+  grayDarker2: "#a7a9aa",
+  dark: "#0a0a0a"
 };
