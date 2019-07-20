@@ -8,7 +8,7 @@ const HelperText = styled.h6`
   font-family: "Rubik", sans-serif;
   font-weight: bold;
 
-  color: ${color.grayDarker2};
+  color: ${props => (props.color ? props.color : color.grayDarker2)};
 `;
 
 export { HelperText };
