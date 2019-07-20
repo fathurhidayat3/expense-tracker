@@ -23,12 +23,20 @@ function App() {
         <div style={{ display: "flex", justifyContent: "space-between" }}>
           <HeadingText type="h3">Stat</HeadingText>
 
-          <ButtonIcon icon={{ name: "Search", size: 15, color: color.light }} />
+          <ButtonIcon icon={{ name: "Search", size: 15, color: color.dark }} />
         </div>
       </TopNavbar>
 
       <div style={{ padding: "8px 0 24px 0", overflowY: "scroll", zIndex: 1 }}>
-        {[0, 0, 0, 0].map((item, index) => (
+        {/* <FlexWrapper direction="row">
+          <ListGroup>
+            <ListGroupItem>satu</ListGroupItem>
+
+            <ListGroupItem>dua</ListGroupItem>
+          </ListGroup>
+        </FlexWrapper> */}
+
+        {[0, 0, 0, 0, 0].map((item, index) => (
           <FlexWrapper direction="row" key={index}>
             <CardWrapper>
               <CardContainer>
@@ -76,28 +84,29 @@ function App() {
       </div>
 
       <BottomNavbar
+        defaultPath={"stat"}
         leftNav={[
           {
             icon: { name: "Calendar", size: 15, color: color.grayDarker2 },
             text: "Daily",
-            onClick: () => console.log("daily")
+            pathname: "daily"
           },
           {
             icon: { name: "BarChart2", size: 15, color: color.grayDarker2 },
             text: "Stat",
-            onClick: () => console.log("stat")
+            pathname: "stat"
           }
         ]}
         rightNav={[
           {
             icon: { name: "Book", size: 15, color: color.grayDarker2 },
             text: "Budget",
-            onClick: () => console.log("budget")
+            pathname: "budget"
           },
           {
             icon: { name: "User", size: 15, color: color.grayDarker2 },
             text: "Profile",
-            onClick: () => console.log("profile")
+            pathname: "profile"
           }
         ]}
       />
