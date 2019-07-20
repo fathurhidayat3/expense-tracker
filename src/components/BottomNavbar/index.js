@@ -3,6 +3,7 @@ import { ButtonFloating } from "../ButtonFloating/style";
 import ButtonIcon from "../ButtonIcon";
 import FlexWrapper from "../FlexWrapper";
 import { BottomNavbarContainer, BottomNavbarPart } from "./style";
+import { color } from "../../constants";
 
 const BottomNavbar = ({ leftNav, rightNav, ...otherProps }) => {
   return (
@@ -20,7 +21,7 @@ const BottomNavbar = ({ leftNav, rightNav, ...otherProps }) => {
       </FlexWrapper>
 
       <ButtonFloating>
-        <ButtonIcon icon={{ name: "Plus", size: 20 }} />
+        <ButtonIcon icon={{ name: "Plus", size: 20, color: color.light }} />
       </ButtonFloating>
 
       <FlexWrapper noPadding justifyContent="flex-end">

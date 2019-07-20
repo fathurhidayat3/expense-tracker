@@ -14,6 +14,7 @@ import FlexWrapper from "./components/FlexWrapper";
 import HeadingText from "./components/HeadingText";
 import HelperText from "./components/HelperText";
 import TopNavbar from "./components/TopNavbar/style";
+import { color } from "./constants";
 
 function App() {
   return (
@@ -22,7 +23,7 @@ function App() {
         <div style={{ display: "flex", justifyContent: "space-between" }}>
           <HeadingText type="h3">Stat</HeadingText>
 
-          <ButtonIcon icon={{ name: "Search", size: 15 }} />
+          <ButtonIcon icon={{ name: "Search", size: 15, color: color.light }} />
         </div>
       </TopNavbar>
 
@@ -77,24 +78,24 @@ function App() {
       <BottomNavbar
         leftNav={[
           {
-            icon: { name: "Calendar", size: 15 },
+            icon: { name: "Calendar", size: 15, color: color.grayDarker2 },
             text: "Daily",
             onClick: () => console.log("daily")
           },
           {
-            icon: { name: "BarChart2", size: 15 },
+            icon: { name: "BarChart2", size: 15, color: color.grayDarker2 },
             text: "Stat",
             onClick: () => console.log("stat")
           }
         ]}
         rightNav={[
           {
-            icon: { name: "Book", size: 15 },
+            icon: { name: "Book", size: 15, color: color.grayDarker2 },
             text: "Budget",
             onClick: () => console.log("budget")
           },
           {
-            icon: { name: "User", size: 15 },
+            icon: { name: "User", size: 15, color: color.grayDarker2 },
             text: "Profile",
             onClick: () => console.log("profile")
           }
