@@ -28,7 +28,7 @@ const ButtonIcon = ({ icon, withText, isActive, ...otherProps }: Props) => {
     <ButtonIconStyled isActive={isActive} withText={withText} {...otherProps}>
       <TempIcon
         size={icon && icon.size}
-        color={icon && icon.color && (isActive && color.primary)}
+        color={isActive ? color.primary : icon && icon.color}
       />
       <HelperText style={{ marginTop: 8 }}>{withText}</HelperText>
     </ButtonIconStyled>
