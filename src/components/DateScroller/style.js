@@ -12,6 +12,7 @@ const DateScrollerWrapper = styled.div`
   overflow: -moz-scrollbars-none;
   -ms-overflow-style: none;
   &::-webkit-scrollbar {
+    height: 0 !important;
     width: 0 !important;
   }
 `;
