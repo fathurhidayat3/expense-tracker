@@ -8,6 +8,12 @@ const DateScrollerWrapper = styled.div`
   display: flex;
   margin: ${spacing.lg} -4px 0 -4px;
   overflow-x: scroll;
+  scrollbar-width: none;
+  overflow: -moz-scrollbars-none;
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar {
+    width: 0 !important;
+  }
 `;
 
 const DateScrollerButtonContainer = styled.div`
