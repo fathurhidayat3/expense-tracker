@@ -1,0 +1,22 @@
+{
+  "data": [
+    {
+      "name": "Bambang Gentolet",
+      "type": "income",
+      "amount": 555.55,
+      "date": "2019-07-21T11:25:43.511Z"
+    },
+    {
+      "name": "Paijo Sukarwo",
+      "type": "expense",
+      "amount": 35.55,
+      "date": "2019-07-21T16:00:00.000Z"
+    },
+    {
+      "name": "Paidi Suratman",
+      "type": "income",
+      "amount": 490.8,
+      "date": "2012-04-23T18:25:43.511Z"
+    }
+  ]
+}
