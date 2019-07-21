@@ -9,6 +9,7 @@ import {
 } from "./style";
 
 type Props = {
+  defaultDate: string,
   data: Object,
   buttonStyle?: Object,
   onButtonClick: Function,
@@ -16,12 +17,14 @@ type Props = {
 };
 
 const DateScroller = ({
+  defaultDate,
   data,
   buttonStyle,
   onButtonClick,
   ...otherProps
 }: Props) => {
-  const [buttonItem, setButtonItem] = React.useState(1);
+  // const date = dayjs().date();
+  const [buttonItem, setButtonItem] = React.useState(defaultDate);
 
   return (
     <DateScrollerWrapper>
@@ -37,7 +40,7 @@ const DateScroller = ({
               isActive={item.num === buttonItem && true}
               onClick={() => setButtonItem(item.num)}
             >
-              {item.num}
+              {parseInt(item.num)}
             </DateScrollerButton>
           </DateScrollerButtonContainer>
         );
