@@ -1,10 +1,10 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
+import { color } from "../../constants";
 import { ButtonFloating } from "../ButtonFloating/style";
 import ButtonIcon from "../ButtonIcon";
 import FlexWrapper from "../FlexWrapper";
 import { BottomNavbarContainer, BottomNavbarPart } from "./style";
-import { color } from "../../constants";
 
 const BottomNavbar = ({
   defaultPath,
