@@ -6,6 +6,7 @@ import {
   CardTop,
   CardWrapper
 } from "../components/Card";
+import Avatar from "../components/Avatar";
 import HeadingText from "../components/HeadingText";
 import HelperText from "../components/HelperText";
 
@@ -29,16 +30,7 @@ const Stat = () => {
           <CardContainer>
             <Link to="/">
               <CardTop>
-                <img
-                  src="/images/icons/previous.svg"
-                  alt="et-logo"
-                  style={{
-                    height: 25,
-                    width: 25,
-                    objectFit: "cover",
-                    borderRadius: 25
-                  }}
-                />
+                <Avatar src="/images/icons/previous.svg" alt="et-logo" />
               </CardTop>
               <CardBottom>
                 <HelperText>Income</HelperText>
@@ -52,16 +44,7 @@ const Stat = () => {
           <CardContainer>
             <Link to="/">
               <CardTop>
-                <img
-                  src="/images/icons/play-button.svg"
-                  alt="et-logo"
-                  style={{
-                    height: 25,
-                    width: 25,
-                    objectFit: "cover",
-                    borderRadius: 25
-                  }}
-                />
+                <Avatar src="/images/icons/play-button.svg" alt="et-logo" />
               </CardTop>
               <CardBottom>
                 <HelperText>Expense</HelperText>

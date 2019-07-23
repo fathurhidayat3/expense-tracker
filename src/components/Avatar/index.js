@@ -1,1 +1,1 @@
-export { Avatar } from "./style";
+export { Avatar as default } from "./style";
