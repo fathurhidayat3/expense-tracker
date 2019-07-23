@@ -6,6 +6,7 @@ import {
   CardTop,
   CardWrapper
 } from "../components/Card";
+import BannerImage from "../components/BannerImage";
 import Avatar from "../components/Avatar";
 import HeadingText from "../components/HeadingText";
 import HelperText from "../components/HelperText";
@@ -32,16 +33,7 @@ const AddTransaction1 = () => {
           padding: "16px 24px"
         }}
       >
-        <img
-          src="https://via.placeholder.com/150"
-          alt="et-lgi"
-          style={{
-            height: "100%",
-            width: "100%",
-            objectFit: "cover",
-            borderRadius: 8
-          }}
-        />
+        <BannerImage src="https://via.placeholder.com/150" alt="et-lgi" />
       </div>
 
       <div style={{ padding: "8px 24px" }}>

@@ -2,6 +2,7 @@
 
 import dayjs from "dayjs";
 import React from "react";
+import Avatar from "../components/Avatar";
 import FlexWrapper from "../components/FlexWrapper";
 import HeadingText from "../components/HeadingText";
 import HelperText from "../components/HelperText";
@@ -39,15 +40,12 @@ const Daily = () => {
 
                       return (
                         <ListGroupItem key={index}>
-                          <img
+                          <Avatar
                             src="https://via.placeholder.com/150"
                             alt="et-lgi"
-                            style={{
-                              height: 35,
-                              width: 35,
-                              objectFit: "cover",
-                              borderRadius: 35
-                            }}
+                            height={"35px"}
+                            width={"35px"}
+                            borderRadius={"35px"}
                           />
                           <div
                             style={{
