@@ -61,14 +61,15 @@ function App() {
     }
   ];
 
-  const initialState = () => localStorage.getItem("data");
+  // localStorage.clear();
+  // localStorage.setItem("data", JSON.stringify(dummy));
+
+  const initialState = () => JSON.parse(localStorage.getItem("data"));
   let [data, setData] = React.useState(initialState);
 
   return (
     <Router>
-      <DataContext.Provider
-        value={{ data: JSON.parse(data), setData: setData }}
-      >
+      <DataContext.Provider value={{ data: data || [], setData: setData }}>
         <DateContext.Provider value={{ etDate: etDate, setEtDate: setEtDate }}>
           <Base>
             <TopNavbar>
