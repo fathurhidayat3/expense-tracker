@@ -16,6 +16,14 @@ import Stat from "./pages/Stat";
 
 function App() {
   const [etDate, setEtDate] = React.useState(dayjs().format("YYYY-MM-DD"));
+  const scrollerData = Array.from(
+    new Array(dayjs(etDate).daysInMonth()).fill().map((e, index) => {
+      return {
+        num: ("0" + (index + 1)).slice(-2),
+        day: dayjs(etDate.substr(0, 8) + (index + 1)).format("ddd")
+      };
+    })
+  );
 
   return (
     <Router>
@@ -32,18 +40,7 @@ function App() {
 
             <DateScroller
               defaultDate={("0" + etDate).slice(-2)}
-              data={Array.from(
-                new Array(dayjs(etDate).daysInMonth())
-                  .fill()
-                  .map((e, index) => {
-                    return {
-                      num: ("0" + (index + 1)).slice(-2),
-                      day: dayjs(etDate.substr(0, 8) + (index + 1)).format(
-                        "ddd"
-                      )
-                    };
-                  })
-              )}
+              data={scrollerData}
               buttonStyle={{
                 activeBackground: "red",
                 activeColor: "yellow"
