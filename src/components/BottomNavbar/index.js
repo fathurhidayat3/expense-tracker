@@ -12,6 +12,7 @@ const BottomNavbar = ({
   rightNav,
   location: { pathname },
   history,
+  buttonFloatingClick,
   ...otherProps
 }) => {
   const [navItem, setNavItem] = React.useState(pathname);
@@ -39,7 +40,7 @@ const BottomNavbar = ({
         })}
       </FlexWrapper>
 
-      <ButtonFloating>
+      <ButtonFloating onClick={() => history.push(buttonFloatingClick)}>
         <ButtonIcon icon={{ name: "Plus", size: 20, color: color.light }} />
       </ButtonFloating>
 
