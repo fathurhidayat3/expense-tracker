@@ -4,9 +4,9 @@ import * as Yup from "yup";
 import HeadingText from "../components/HeadingText";
 
 const TransactionSchema = Yup.object().shape({
-  type: Yup.string().required("Required"),
+  type: Yup.string(),
   info: Yup.string().required("Required"),
-  category: Yup.string().required("Required"),
+  category: Yup.string(),
   date: Yup.string().required("Required"),
   amount: Yup.string().required("Required")
 });
@@ -27,14 +27,16 @@ const AddTransaction2 = () => {
 
       <Formik
         initialValues={{
-          type: "",
+          type: "income",
           info: "",
-          category: "",
+          category: "salary",
           date: "",
           amount: ""
         }}
         validationSchema={TransactionSchema}
         onSubmit={values => {
+          // await console.log(JSON.parse(localStorage.getItem("data")));
+
           console.log(values);
         }}
       >
@@ -81,9 +83,9 @@ const AddTransaction2 = () => {
             >
               <HeadingText type={"h5"}>Choose category</HeadingText>
               <Field name="category" component="select">
-                <option value="income">Salary</option>
-                <option value="expense">Bank</option>
-              </Field>{" "}
+                <option value="salary">Salary</option>
+                <option value="bank">Bank</option>
+              </Field>
               {errors.category && touched.category ? (
                 <div>{errors.category}</div>
               ) : null}
