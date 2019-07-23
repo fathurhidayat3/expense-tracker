@@ -3,24 +3,28 @@
     {
       "name": "John Doe",
       "type": "income",
+      "info": "lorem ipsum",
       "amount": 250.0,
       "date": "2019-07-01T11:25:43.511Z"
     },
     {
       "name": "Jane Doe",
       "type": "income",
+      "info": "lorem ipsum",
       "amount": 300.0,
       "date": "2019-07-01T11:25:43.511Z"
     },
     {
       "name": "John Doe",
       "type": "income",
+      "info": "lorem ipsum",
       "amount": 555.55,
       "date": "2019-07-02T11:25:43.511Z"
     },
     {
       "name": "Jean Doe",
       "type": "income",
+      "info": "lorem ipsum",
       "amount": 75.0,
       "date": "2019-07-03T11:25:43.511Z"
     },
@@ -33,6 +37,7 @@
     {
       "name": "John Doe",
       "type": "income",
+      "info": "lorem ipsum",
       "amount": 555.55,
       "date": "2019-07-07T11:25:43.511Z"
     },
@@ -45,60 +50,70 @@
     {
       "name": "John Doe",
       "type": "expense",
+      "info": "lorem ipsum",
       "amount": 50,
       "date": "2019-07-08T11:25:43.511Z"
     },
     {
       "name": "John Doe",
       "type": "income",
+      "info": "lorem ipsum",
       "amount": 555.55,
       "date": "2019-07-08T11:25:43.511Z"
     },
     {
       "name": "John Doe",
       "type": "income",
+      "info": "lorem ipsum",
       "amount": 555.55,
       "date": "2019-07-09T11:25:43.511Z"
     },
     {
       "name": "John Doe",
       "type": "income",
+      "info": "lorem ipsum",
       "amount": 555.55,
       "date": "2019-07-10T11:25:43.511Z"
     },
     {
       "name": "John Doe",
       "type": "income",
+      "info": "lorem ipsum",
       "amount": 555.55,
       "date": "2019-07-11T11:25:43.511Z"
     },
     {
       "name": "Paijo Sukarwo",
       "type": "expense",
+      "info": "lorem ipsum",
       "amount": 35.55,
       "date": "2019-07-12T16:00:00.000Z"
     },
     {
       "name": "Jenny Doe",
       "type": "income",
+      "info": "lorem ipsum",
       "amount": 490.8,
       "date": "2019-07-20T12:25:43.511Z"
     },
     {
       "name": "Jenny Doe",
       "type": "income",
+      "info": "lorem ipsum",
       "amount": 490.8,
       "date": "2019-07-20T12:25:43.511Z"
     },
     {
       "name": "Jenny Doe",
       "type": "income",
+      "info": "lorem ipsum",
       "amount": 490.8,
       "date": "2019-07-21T12:25:43.511Z"
     },
     {
       "name": "Jenny Doe",
       "type": "income",
+      "info": "lorem ipsum",
       "amount": 490.8,
       "date": "2019-07-22T12:25:43.511Z"
     }
