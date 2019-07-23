@@ -1,21 +1,33 @@
 import React from "react";
-import FlexWrapper from "../components/FlexWrapper";
+import { Link } from "react-router-dom";
 import {
-  CardWrapper,
+  CardBottom,
   CardContainer,
   CardTop,
-  CardBottom
+  CardWrapper
 } from "../components/Card";
-import HelperText from "../components/HelperText";
 import HeadingText from "../components/HeadingText";
+import HelperText from "../components/HelperText";
 
 const Stat = () => {
   return (
-    <div style={{ padding: "8px 0 24px 0", overflowY: "scroll", zIndex: 1 }}>
-      {[0, 0, 0, 0, 0].map((item, index) => (
-        <FlexWrapper direction="row" key={index}>
-          <CardWrapper>
-            <CardContainer>
+    <div
+      style={{
+        flex: 1,
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "flex-end",
+        padding: "8px 0 24px 0",
+        overflowY: "scroll",
+        zIndex: 1
+      }}
+    >
+      <div style={{ flex: 1 }} />
+
+      <div style={{ display: "flex", padding: "0 8px" }}>
+        <CardWrapper>
+          <CardContainer>
+            <Link to="/">
               <CardTop>
                 <img
                   src="/images/icons/previous.svg"
@@ -32,11 +44,13 @@ const Stat = () => {
                 <HelperText>Income</HelperText>
                 <HeadingText type="h4">$6,593.75</HeadingText>
               </CardBottom>
-            </CardContainer>
-          </CardWrapper>
+            </Link>
+          </CardContainer>
+        </CardWrapper>
 
-          <CardWrapper>
-            <CardContainer>
+        <CardWrapper>
+          <CardContainer>
+            <Link to="/">
               <CardTop>
                 <img
                   src="/images/icons/play-button.svg"
@@ -53,10 +67,10 @@ const Stat = () => {
                 <HelperText>Expense</HelperText>
                 <HeadingText type="h4">$2,645.50</HeadingText>
               </CardBottom>
-            </CardContainer>
-          </CardWrapper>
-        </FlexWrapper>
-      ))}
+            </Link>
+          </CardContainer>
+        </CardWrapper>
+      </div>
     </div>
   );
 };
