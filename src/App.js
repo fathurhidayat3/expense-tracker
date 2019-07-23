@@ -68,11 +68,7 @@ function App() {
           <Base>
             <TopNavbar>
               <div style={{ display: "flex", justifyContent: "space-between" }}>
-                <HeadingText type="h3">Daily transaction</HeadingText>
-
-                <ButtonIcon
-                  icon={{ name: "Search", size: 15, color: color.dark }}
-                />
+                <HeadingText type="h3">Expense Tracker</HeadingText>
               </div>
 
               <DateScroller
