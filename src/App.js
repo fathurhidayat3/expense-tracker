@@ -5,29 +5,18 @@ import * as React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Base from "./components/Base";
 import BottomNavbar from "./components/BottomNavbar";
-import ButtonIcon from "./components/ButtonIcon";
 import DateScroller from "./components/DateScroller";
 import HeadingText from "./components/HeadingText";
 import TopNavbar from "./components/TopNavbar/style";
 import { color } from "./constants";
-import DataContext from "./contexts/DataContext";
-import DateContext from "./contexts/DateContext";
-import AddTransaction1 from "./pages/AddTransaction1";
-import AddTransaction2 from "./pages/AddTransaction2";
-import Daily from "./pages/Daily";
-import Stat from "./pages/Stat";
-import dummy from "./server/dummy.json";
+import { DataContext, DateContext } from "./contexts";
+import { AddTransaction1, AddTransaction2, Daily, Stat } from "./pages";
+import generateDayofMonth from "./utils/generateDayofMonth";
 
 function App() {
   const [etDate, setEtDate] = React.useState(dayjs().format("YYYY-MM-DD"));
-  const scrollerData = Array.from(
-    new Array(dayjs(etDate).daysInMonth()).fill().map((e, index) => {
-      return {
-        num: ("0" + (index + 1)).slice(-2),
-        day: dayjs(etDate.substr(0, 8) + (index + 1)).format("ddd")
-      };
-    })
-  );
+  const scrollerData = generateDayofMonth(etDate);
+
   const leftBottomNav = [
     {
       icon: {
