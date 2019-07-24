@@ -36,7 +36,7 @@ const Daily = () => {
                 <FlexWrapper>
                   <ListGroup>
                     {filteredData.map((item, index) => {
-                      sumAmount += item.amount;
+                      sumAmount += parseInt(item.amount);
 
                       return (
                         <ListGroupItem key={index}>
