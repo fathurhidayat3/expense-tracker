@@ -11,7 +11,7 @@ import TopNavbar from "./components/TopNavbar/style";
 import { color } from "./constants";
 import { DataContext, DateContext } from "./contexts";
 import { AddTransaction1, AddTransaction2, Daily, Stat } from "./pages";
-import generateDayofMonth from "./utils/generateDayofMonth";
+import { generateDayofMonth, getLocalData } from "./utils";
 
 function App() {
   const [etDate, setEtDate] = React.useState(dayjs().format("YYYY-MM-DD"));
@@ -53,7 +53,8 @@ function App() {
   // localStorage.clear();
   // localStorage.setItem("data", JSON.stringify(dummy));
 
-  const initialState = () => JSON.parse(localStorage.getItem("data"));
+  const initialState = getLocalData();
+
   let [data, setData] = React.useState(initialState);
 
   return (

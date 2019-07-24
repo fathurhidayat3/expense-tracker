@@ -7,8 +7,7 @@ import FlexWrapper from "../components/FlexWrapper";
 import HeadingText from "../components/HeadingText";
 import HelperText from "../components/HelperText";
 import { ListGroup, ListGroupItem } from "../components/ListGroup";
-import DataContext from "../contexts/DataContext";
-import DateContext from "../contexts/DateContext";
+import { DataContext, DateContext } from "../contexts";
 
 const Daily = () => {
   let sumAmount = 0;
