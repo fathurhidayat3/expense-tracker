@@ -29,8 +29,6 @@ const AddTransaction2 = () => {
                 zIndex: 1
               }}
             >
-              {/* <HeadingText type={"h2"}>Add income transaction</HeadingText> */}
-
               <Formik
                 initialValues={{
                   type: "income",
