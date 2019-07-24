@@ -1,9 +1,13 @@
+// @flow
+
 import { Field, Form, Formik } from "formik";
 import React from "react";
 import * as Yup from "yup";
 import HeadingText from "../components/HeadingText";
 import DataContext from "../contexts/DataContext";
 import DateContext from "../contexts/DateContext";
+
+type Props = {};
 
 const TransactionSchema = Yup.object().shape({
   type: Yup.string(),
@@ -13,7 +17,24 @@ const TransactionSchema = Yup.object().shape({
   amount: Yup.number().required("Required")
 });
 
-const AddTransaction2 = () => {
+const AddTransaction2 = (props: Props) => {
+  const handleFormSubmit = ({ data, setData }, newValue) => {
+    let newData = Object.assign(data);
+    newData.push(newValue);
+
+    localStorage.setItem("data", JSON.stringify(newData));
+    setData(newData);
+  };
+
+  const formInitialValue = etDate => ({
+    type: "income",
+    name: "Fathur Hidayat",
+    info: "",
+    category: "salary",
+    date: etDate,
+    amount: ""
+  });
+
   return (
     <DataContext.Consumer>
       {({ data, setData }) => (
@@ -30,22 +51,9 @@ const AddTransaction2 = () => {
               }}
             >
               <Formik
-                initialValues={{
-                  type: "income",
-                  name: "Fathur Hidayat",
-                  info: "",
-                  category: "salary",
-                  date: etDate,
-                  amount: ""
-                }}
+                initialValues={formInitialValue(etDate)}
                 validationSchema={TransactionSchema}
-                onSubmit={values => {
-                  let newData = Object.assign(data);
-                  newData.push(values);
-
-                  localStorage.setItem("data", JSON.stringify(newData));
-                  setData(newData);
-                }}
+                onSubmit={values => handleFormSubmit({ data, setData }, values)}
               >
                 {({ errors, touched }) => (
                   <Form>
